@@ -1,6 +1,5 @@
 class NrelService
   def get_stations(params)
-    binding.pry
     get_json("api/alt-fuel-stations/v1.json?zip=#{params[:q]}")[:fuel_stations]
   end
 
@@ -18,13 +17,4 @@ class NrelService
       faraday.params['access'] = 'public'
     end
   end
-
-
-
-
-
-
-  # https://developer.nrel.gov
-
-
 end
