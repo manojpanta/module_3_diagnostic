@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 feature "User can visit root page" do
   scenario "and view navbar contents" do
     visit "/"
