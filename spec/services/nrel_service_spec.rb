@@ -10,7 +10,7 @@ describe 'instance methods' do
   it '#get_stations returns all the stations' do
     WebMock.disable!
     facade = NrelService.new
-    expect(facade.get_stations({q: 80260})).to be_a(Hash)
+    expect(facade.get_stations({q: 80260})).to be_a(Array)
   end
   it '#get_json returns all the all the stations in JSON format' do
     WebMock.disable!
