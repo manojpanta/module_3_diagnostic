@@ -1,5 +1,4 @@
 class NrelFacade
-
   def initialize(params)
     @params = params
   end
