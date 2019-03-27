@@ -7,7 +7,8 @@ describe NrelFacade do
 end
 describe 'instance methods' do
   it '#stations returns all the stations' do
+    WebMock.disable!
     facade = NrelFacade.new({q: 80260})
-    expect(facade.stations).to be_a(Array)
+    expect(facade.stations).to be_a(Hash)
   end
 end

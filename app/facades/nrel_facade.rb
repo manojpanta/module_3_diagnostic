@@ -4,7 +4,9 @@ class NrelFacade
   end
 
   def stations
-    service.get_stations(@params)
+    @stations = service.get_stations(@params).map do|station_data|
+      Station.new(station_data)
+    end
   end
 
   def service

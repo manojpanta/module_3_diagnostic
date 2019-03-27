@@ -1,6 +1,6 @@
 class NrelService
   def get_stations(params)
-    get_json("api/alt-fuel-stations/v1.json?zip=#{params[:q]}")
+    get_json("api/alt-fuel-stations/v1.json?zip=#{params[:q]}")[:fuel_stations]
   end
 
   def get_json(url)
