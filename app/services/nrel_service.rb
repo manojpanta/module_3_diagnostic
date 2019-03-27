@@ -1,5 +1,6 @@
 class NrelService
   def get_stations(params)
+    binding.pry
     get_json("api/alt-fuel-stations/v1.json?zip=#{params[:q]}")[:fuel_stations]
   end
 
@@ -12,6 +13,9 @@ class NrelService
     response = Faraday.new(url: "https://developer.nrel.gov/") do |faraday|
       faraday.headers['X-API-KEY'] = ENV['NREL_API_KEY']
       faraday.adapter Faraday.default_adapter
+      faraday.params['limit'] = 15
+      faraday.params['fuel_type'] = 'ELEC,LPG'
+      faraday.params['access'] = 'public'
     end
   end
 

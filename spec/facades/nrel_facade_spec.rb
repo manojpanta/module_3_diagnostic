@@ -10,5 +10,6 @@ describe 'instance methods' do
     WebMock.disable!
     facade = NrelFacade.new({q: 80260})
     expect(facade.stations).to be_a(Array)
+    expect(facade.stations.count).to eq(15)
   end
 end
